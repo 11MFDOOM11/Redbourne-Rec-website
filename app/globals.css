@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #CC0000;
+  --color-dark: #1A1A1A;
+  --color-mid: #4A4A4A;
+  --color-light: #F2F2F2;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-[#1A1A1A] bg-white;
+    font-family: var(--font-inter), Inter, Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-archivo), 'DM Sans', Arial, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-brand-red { color: #CC0000; }
+  .bg-brand-red { background-color: #CC0000; }
+  .border-brand-red { border-color: #CC0000; }
+  .text-brand-dark { color: #1A1A1A; }
+  .bg-brand-dark { background-color: #1A1A1A; }
+  .text-brand-mid { color: #4A4A4A; }
+  .bg-brand-light { background-color: #F2F2F2; }
+}
