@@ -1,46 +1,17 @@
+import Image from "next/image";
 export default function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      {/* SVG logo mark — red figure */}
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 100 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Head */}
-        <circle cx="50" cy="14" r="12" fill="#CC0000" />
-        {/* Body */}
-        <path
-          d="M50 26 L50 70"
-          stroke="#CC0000"
-          strokeWidth="10"
-          strokeLinecap="round"
+    <div className="flex items-center gap-3">
+      {/* Real Logo */}
+      <div className="relative w-10 h-10 shrink-0">
+        <Image
+          src="/images/logo.jpg"
+          alt="Redbourn Recreation Centre & Playing Fields Trust Logo"
+          fill
+          className="object-contain"
+          priority
         />
-        {/* Arms */}
-        <path
-          d="M20 38 L80 38"
-          stroke="#CC0000"
-          strokeWidth="10"
-          strokeLinecap="round"
-        />
-        {/* Left leg */}
-        <path
-          d="M50 70 L28 105"
-          stroke="#CC0000"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-        {/* Right leg */}
-        <path
-          d="M50 70 L72 105"
-          stroke="#CC0000"
-          strokeWidth="9"
-          strokeLinecap="round"
-        />
-      </svg>
+      </div>
       <div className="leading-tight">
         <div className="text-xs font-bold text-[#1A1A1A] uppercase tracking-tight leading-none">
           Redbourn Recreation Centre

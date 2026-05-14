@@ -80,13 +80,12 @@ export default function HomePage() {
             </div>
 
             {/* Right: image */}
-            <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-300 flex items-center justify-center">
-              <div className="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600 flex flex-col items-center justify-center gap-2">
-                <Dumbbell className="text-white opacity-40" size={48} aria-hidden="true" />
-                <span className="text-white opacity-60 text-sm uppercase tracking-widest">
-                  Gym Interior Photo
-                </span>
-              </div>
+            <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-300">
+              <img
+                src="/images/Image1.jpg"
+                alt="Modern gym interior with workout equipment"
+                className="w-full h-full object-cover"
+             />
             </div>
           </div>
         </div>

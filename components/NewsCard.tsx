@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, ArrowRight } from "lucide-react";
 import { NewsPost, formatDate } from "@/lib/news";
 
@@ -10,10 +11,13 @@ export default function NewsCard({ post }: NewsCardProps) {
   return (
     <article className="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col">
       {/* Image placeholder */}
-      <div className="aspect-[16/9] bg-[#F2F2F2] flex items-center justify-center overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-          <span className="text-xs text-gray-400 uppercase tracking-widest">Photo</span>
-        </div>
+      <div className="relative aspect-[16/9] overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
 
       <div className="p-5 flex flex-col flex-1">

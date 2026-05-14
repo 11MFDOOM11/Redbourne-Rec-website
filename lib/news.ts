@@ -24,7 +24,7 @@ export const newsPosts: NewsPost[] = [
 <p>The pitch will be suitable for 5-a-side and 7-a-side football, as well as hockey and other sports. Bookings will be managed through our online system — we'll share details as soon as it's live.</p>
 <p>Thank you to everyone in the community who has supported this project. We can't wait to see it in action.</p>
     `,
-    image: "/images/astro-placeholder.svg",
+    image: "/images/IMG_3054.JPG",
   },
   {
     slug: "reception-plans",
@@ -40,7 +40,7 @@ export const newsPosts: NewsPost[] = [
 <p>We anticipate a decision from the planning authority within the standard eight-week window. Once approved, construction will begin as soon as funding is confirmed.</p>
 <p>We'll keep the community updated on every milestone.</p>
     `,
-    image: "/images/reception-placeholder.svg",
+    image: "/images/ReceptionPlans.jpg",
   },
   {
     slug: "social-bar-cafe",
@@ -55,7 +55,7 @@ export const newsPosts: NewsPost[] = [
 <p>The proposed facility will include a licensed bar, hot and cold food service, and flexible seating suitable for both post-sport wind-downs and private hire events. We're working with local suppliers to ensure the menu reflects the best of what Hertfordshire has to offer.</p>
 <p>More details — including a proposed opening timeline and booking information — will be shared later this year.</p>
     `,
-    image: "/images/cafe-placeholder.svg",
+    image: "/images/BarPlans.jpg",
   },
   {
     slug: "energy-saving",
@@ -70,7 +70,7 @@ export const newsPosts: NewsPost[] = [
 <p>The 48-panel system will generate a significant portion of the electricity used by the gym and changing facilities, reducing our carbon footprint and helping keep membership fees affordable for the community.</p>
 <p>Installation is expected to be completed within the next four weeks, with the system fully operational shortly after. We'll share energy generation data with the community once the system is live — watch this space!</p>
     `,
-    image: "/images/solar-placeholder.svg",
+    image: "/images/Solar.jpg",
   },
   {
     slug: "talent-x",
@@ -85,7 +85,7 @@ export const newsPosts: NewsPost[] = [
 <p>This article will cover the Talent X youth programme, upcoming holiday clubs, and how young people in Redbourn can get involved.</p>
 <p>Please contact us at <a href="mailto:hello@redbournleisure.com" class="text-[#CC0000] underline">hello@redbournleisure.com</a> for more information in the meantime.</p>
     `,
-    image: "/images/talent-placeholder.svg",
+    image: "/images/TalentX.jpg",
   },
 ];
 
