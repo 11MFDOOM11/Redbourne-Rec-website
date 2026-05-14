@@ -226,3 +226,4 @@ Where final content is not yet available, use clearly labelled placeholders:
 3. The Trust runs the facility on behalf of the local community — the tone should be **warm, active, and community-first**, not corporate
 4. All pages should be fully **mobile responsive**
 5. Accessibility: use semantic HTML, ARIA labels on interactive elements, sufficient colour contrast (white on red passes WCAG AA)
+ testing
