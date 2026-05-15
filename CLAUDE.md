@@ -1,7 +1,7 @@
 # CLAUDE.md — Redbourn Leisure Centre Website
 
 ## Project Overview
-
+hhhhh
 Build a multi-page website for **Redbourn Leisure Centre** (operated by Redbourn Recreation Centre & Playing Fields Trust — RRCPFT). The site should serve local community members, prospective members, and visitors. It should feel professional, community-focused, and energetic — aligned with a sports and leisure brand.
 
 Target domain: **redbournleisure.co.uk**
