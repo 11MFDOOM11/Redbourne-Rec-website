@@ -85,7 +85,7 @@ export const newsPosts: NewsPost[] = [
 <p>This article will cover the Talent X youth programme, upcoming holiday clubs, and how young people in Redbourn can get involved.</p>
 <p>Please contact us at <a href="mailto:hello@redbournleisure.com" class="text-[#CC0000] underline">hello@redbournleisure.com</a> for more information in the meantime.</p>
     `,
-    image: "/images/TalentX.jpg",
+    image: "/images/TalentX.JPG",
   },
 ];
 

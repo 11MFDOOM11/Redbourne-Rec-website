@@ -82,7 +82,7 @@ export default function HomePage() {
             {/* Right: image */}
             <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-300">
               <img
-                src="/images/Image1.jpg"
+                src="/images/Image1.JPG"
                 alt="Modern gym interior with workout equipment"
                 className="w-full h-full object-cover"
              />
