@@ -5,7 +5,7 @@ export default function Logo() {
       {/* Real Logo */}
       <div className="relative w-10 h-10 shrink-0">
         <Image
-          src="/images/logo.jpg"
+          src="/images/Logo.jpg"
           alt="Redbourn Recreation Centre & Playing Fields Trust Logo"
           fill
           className="object-contain"
