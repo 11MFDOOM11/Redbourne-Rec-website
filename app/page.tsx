@@ -174,7 +174,7 @@ export default function HomePage() {
                   <address className="not-italic text-sm text-[#4A4A4A] leading-relaxed">
                     Redbourn Leisure Centre<br />
                     Redbourn<br />
-                    St Albans, AL3 7PS
+                    St Albans, AL3 7PP
                   </address>
                 </div>
               </div>
@@ -195,10 +195,10 @@ export default function HomePage() {
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A] mb-0.5">Email</p>
                   <a
-                    href="mailto:hello@redbournleisure.com"
+                    href="mailto:enquiries@redbournleisure.co.uk"
                     className="text-sm text-[#4A4A4A] hover:text-[#CC0000] transition-colors"
                   >
-                    hello@redbournleisure.com
+                    enquiries@redbournleisure.co.uk
                   </a>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function HomePage() {
                 href="/book"
                 className="whitespace-nowrap inline-flex items-center gap-2 bg-[#CC0000] hover:bg-red-800 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors self-start mt-2"
               >
-                Make a Booking <ArrowRight size={14} aria-hidden="true" />
+                Booking Enquiry <ArrowRight size={14} aria-hidden="true" />
               </Link>
             </div>
 
@@ -214,7 +214,7 @@ export default function HomePage() {
             <div className="rounded-xl overflow-hidden shadow border border-gray-100 aspect-[4/3]">
               <iframe
                 title="Redbourn Leisure Centre location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.0!2d-0.3920!3d51.7990!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUmVkYm91cm4!5e0!3m2!1sen!2suk!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2467.0441508815416!2d-0.40464622302179193!3d51.80535388889285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487647748cccbd5f%3A0xe0429a6719168e02!2sRedbourn%20Leisure%20Centre!5e0!3m2!1sen!2suk!4v1780327515999!5m2!1sen!2suk"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
