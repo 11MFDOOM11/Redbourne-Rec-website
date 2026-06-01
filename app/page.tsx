@@ -113,7 +113,7 @@ export default function HomePage() {
                       {item.title}
                     </h3>
                     {item.tag && (
-                      <span className="text-[10px] font-bold uppercase tracking-widest bg-[#CC0000] text-white px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold uppercase tracking-widest bg-[#CC0000] text-white px-2 py-0.5 rounded-full whitespace-nowrap">
                         {item.tag}
                       </span>
                     )}
