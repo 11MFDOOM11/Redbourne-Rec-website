@@ -56,12 +56,13 @@ export default function HomePage() {
               </p>
               <h1 className="text-3xl font-bold text-[#1A1A1A] leading-tight mb-4">
                 Redbourn Leisure Centre:<br />
-                The Future of Community Wellness
+                Hub for Wellbeing, Sports & Leisure
               </h1>
               <p className="text-base text-[#4A4A4A] leading-relaxed mb-6 max-w-md">
-                A premium community facility fostering engagement through fitness,
-                recreation, and modern amenities. We're building a state-of-the-art
-                sports centre to empower every resident and strengthen our local bonds.
+              Our new state of the art modern sports facility has been designed to incorporate
+              sport, fitness, and everyday wellbeing. The centre will have something to offer
+              everyone and inspire our visitors of all ages to get active and enjoy being part of this
+              local facility.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
