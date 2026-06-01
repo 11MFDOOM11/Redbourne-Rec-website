@@ -17,13 +17,13 @@ const amenities = [
     icon: <Dumbbell className="text-[#CC0000]" size={28} aria-hidden="true" />,
     title: "Gym & Fitness Suite",
     description:
-      "A fully equipped gym with cardio machines, free weights, and resistance equipment for all fitness levels.",
+      "A fully equipped gym with cardio machines, free weights, and resistance equipment for all fitness levels. Run and managed by Everyone Active.",
   },
   {
     icon: <Goal className="text-[#CC0000]" size={28} aria-hidden="true" />,
     title: "Astroturf Pitch",
     description:
-      "Brand-new 3G artificial turf pitch suitable for 5-a-side football, hockey, and more.",
+      "Brand-new 3G artificial turf pitch suitable for full pitch, 7-a-side and 5-a-side football, and much more.",
   },
   {
     icon: <Coffee className="text-[#CC0000]" size={28} aria-hidden="true" />,
@@ -36,7 +36,7 @@ const amenities = [
     icon: <Users className="text-[#CC0000]" size={28} aria-hidden="true" />,
     title: "Community Spaces",
     description:
-      "Flexible spaces available for hire — ideal for meetings, classes, events, and local group activities.",
+      "Flexible spaces indoors and outdoorsavailable suitable for usage and hire. Ideal for meetings, classes, events, corporateteam building away days and community group activities.",
   },
 ];
 
