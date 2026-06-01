@@ -69,13 +69,7 @@ export default function HomePage() {
                   href="/book"
                   className="whitespace-nowrap bg-[#CC0000] hover:bg-red-800 text-white font-semibold px-6 py-2.5 rounded-full transition-colors text-sm"
                 >
-                  Join Now
-                </Link>
-                <Link
-                  href="/book"
-                  className="whitespace-nowrap border-2 border-[#CC0000] text-[#CC0000] hover:bg-[#CC0000] hover:text-white font-semibold px-6 py-2.5 rounded-full transition-colors text-sm"
-                >
-                  Book Online
+                  Booking Enquiry
                 </Link>
               </div>
             </div>

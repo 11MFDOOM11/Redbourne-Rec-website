@@ -4,7 +4,6 @@ import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 
 const activities = [
-  "Gym / Fitness Suite",
   "Astroturf Pitch — 5-a-side",
   "Astroturf Pitch — 7-a-side",
   "Community Space Hire",
@@ -43,10 +42,10 @@ export default function BookPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-[#CC0000] mb-2">
             Redbourn Leisure Centre
           </p>
-          <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Book Online</h1>
+          <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Booking Enquiry Form</h1>
           <p className="text-base text-[#4A4A4A] max-w-xl leading-relaxed">
-            Fill in the form below and our team will get back to you to confirm
-            your booking. For urgent enquiries, call us on{" "}
+            Please complete and submit the form to enqurire about our available facilities: Astroturf Pitch, 
+            Community Spare Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on 01582 792471. {" "}
             <a
               href="tel:01582792471"
               className="text-[#CC0000] hover:underline"
