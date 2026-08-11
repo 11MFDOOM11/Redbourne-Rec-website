@@ -47,11 +47,11 @@ export default function Footer() {
                 Contact
               </p>
               <a
-                href="mailto:enquiries@redbournleisure.co.uk"
+                href="mailto:rrcpft@gmail.com"
                 className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 <Mail size={14} aria-hidden="true" />
-                enquiries@redbournleisure.co.uk
+                rrcpft@gmail.com
               </a>
             </div>
 
