@@ -92,25 +92,25 @@ export default function HistoryPage() {
             <div className="space-y-6">
               {[
                 {
-                  year: "1970s",
+                  year: "1970's",
                   title: "Playing Fields Established",
                   description:
                     "The original playing fields and recreation ground were laid out, providing Redbourn's first dedicated community sports space.",
                 },
                 {
-                  year: "1990s",
+                  year: "1990's",
                   title: "Gym & Fitness Suite Opens",
                   description:
                     "The Trust opened a fully equipped gym facility, making fitness accessible to residents at affordable rates.",
                 },
                 {
-                  year: "2000s",
+                  year: "2000's",
                   title: "Trust Formally Incorporated",
                   description:
                     "RRCPFT was formally incorporated as a charitable trust, cementing its not-for-profit, community-first governance structure.",
                 },
                 {
-                  year: "2020s",
+                  year: "2020's",
                   title: "Redevelopment Programme Begins",
                   description:
                     "An ambitious programme to upgrade and expand the facility is launched, including the new 3G astroturf pitch, reception building, and solar energy installation.",

@@ -178,7 +178,7 @@ export default function HomePage() {
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A] mb-0.5">Phone</p>
                   <a
-                    href="tel:01582792471"
+                    href="tel:01582626202"
                     className="text-sm text-[#4A4A4A] hover:text-[#CC0000] transition-colors"
                   >
                     01582 792471
@@ -190,10 +190,10 @@ export default function HomePage() {
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A] mb-0.5">Email</p>
                   <a
-                    href="mailto:enquiries@redbournleisure.co.uk"
+                    href="mailto:rrcpft@gmail.com"
                     className="text-sm text-[#4A4A4A] hover:text-[#CC0000] transition-colors"
                   >
-                    enquiries@redbournleisure.co.uk
+                    rrcpft@gmail.com
                   </a>
                 </div>
               </div>
