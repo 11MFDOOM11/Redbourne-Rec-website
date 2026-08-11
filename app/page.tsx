@@ -181,7 +181,7 @@ export default function HomePage() {
                     href="tel:01582626202"
                     className="text-sm text-[#4A4A4A] hover:text-[#CC0000] transition-colors"
                   >
-                    01582 792471
+                    01582 626202
                   </a>
                 </div>
               </div>
