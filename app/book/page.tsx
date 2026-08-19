@@ -1,218 +1,306 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 
 const activities = [
   "Astroturf Pitch — 5-a-side",
   "Astroturf Pitch — 7-a-side",
-  "Community Space Hire",
+  "Astroturf Pitch — 11-a-side",
   "Holiday Club",
   "Other",
 ];
 
+const durations = [
+  "30 minutes",
+  "1 hour",
+  "1.5 hours",
+  "2 hours",
+  "Other (specify in message)",
+];
+
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
     activity: "",
     date: "",
+    time: "",
+    duration: "",
     message: "",
   });
 
   function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+      e: React.ChangeEvent<
+          HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send enquiry");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+          "Sorry, something went wrong sending your enquiry. Please try again, or call us on 01582 626202."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
-    <>
-      {/* Page header */}
-      <section className="bg-[#F2F2F2] py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#CC0000] mb-2">
-            Redbourn Leisure Centre
-          </p>
-          <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Booking Enquiry Form</h1>
-          <p className="text-base text-[#4A4A4A] max-w-xl leading-relaxed">
-            Please complete and submit the form to enqurire about our available facilities: Astroturf Pitch, 
-            Community Spare Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on 01582 626202. {" "}
-            <a
-              href="tel:01582626202"
-              className="text-[#CC0000] hover:underline"
-            >
-              01582 626202
-            </a>
-            .
-          </p>
-          <p className="text-sm text-[#4A4A4A] mt-2 italic">
-            [BOOKING SYSTEM — TO BE INTEGRATED] — currently accepting enquiries
-            via the form below.
-          </p>
-        </div>
-      </section>
-
-      {/* Form section */}
-      <section className="bg-white py-14">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          {submitted ? (
-            <div className="flex flex-col items-center gap-4 py-16 text-center">
-              <CheckCircle className="text-[#CC0000]" size={48} aria-hidden="true" />
-              <h2 className="text-2xl font-semibold text-[#1A1A1A]">
-                Request Received!
-              </h2>
-              <p className="text-[#4A4A4A] max-w-sm leading-relaxed">
-                Thank you for your booking request. A member of the team will
-                be in touch within 1–2 working days to confirm your session.
-              </p>
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setForm({
-                    name: "",
-                    email: "",
-                    activity: "",
-                    date: "",
-                    message: "",
-                  });
-                }}
-                className="whitespace-nowrap bg-[#CC0000] hover:bg-red-800 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors mt-2"
+      <>
+        {/* Page header */}
+        <section className="bg-[#F2F2F2] py-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#CC0000] mb-2">
+              Redbourn Leisure Centre
+            </p>
+            <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Booking Enquiry Form</h1>
+            <p className="text-base text-[#4A4A4A] max-w-xl leading-relaxed">
+              Please complete and submit the form to enquire about our available facilities: Astroturf Pitch,
+              Community Space Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on 01582 626202.{" "}
+              <a
+                href="tel:01582626202"
+                className="text-[#CC0000] hover:underline"
               >
-                Make Another Booking
-              </button>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-5"
-              noValidate
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {/* Name */}
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="name"
-                    className="text-sm font-semibold text-[#1A1A1A]"
-                  >
-                    Full Name <span className="text-[#CC0000]">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Jane Smith"
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
-                  />
-                </div>
+                01582 626202
+              </a>
+              .
+            </p>
+            <p className="text-sm text-[#4A4A4A] mt-2 italic">
+              [BOOKING SYSTEM — TO BE INTEGRATED] — currently accepting enquiries
+              via the form below.
+            </p>
+          </div>
+        </section>
 
-                {/* Email */}
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-semibold text-[#1A1A1A]"
+        {/* Form section */}
+        <section className="bg-white py-14">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            {submitted ? (
+                <div className="flex flex-col items-center gap-4 py-16 text-center">
+                  <CheckCircle className="text-[#CC0000]" size={48} aria-hidden="true" />
+                  <h2 className="text-2xl font-semibold text-[#1A1A1A]">
+                    Request Received!
+                  </h2>
+                  <p className="text-[#4A4A4A] max-w-sm leading-relaxed">
+                    Thank you for your booking enquiry. A member of the team will
+                    be in touch within 1–2 working days to confirm your session.
+                  </p>
+                  <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setForm({
+                          name: "",
+                          email: "",
+                          activity: "",
+                          date: "",
+                          time: "",
+                          duration: "",
+                          message: "",
+                        });
+                      }}
+                      className="whitespace-nowrap bg-[#CC0000] hover:bg-red-800 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors mt-2"
                   >
-                    Email Address <span className="text-[#CC0000]">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="jane@example.com"
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
-                  />
+                    Make Another Enquiry
+                  </button>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {/* Activity */}
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="activity"
-                    className="text-sm font-semibold text-[#1A1A1A]"
-                  >
-                    Activity / Facility <span className="text-[#CC0000]">*</span>
-                  </label>
-                  <select
-                    id="activity"
-                    name="activity"
-                    required
-                    value={form.activity}
-                    onChange={handleChange}
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent bg-white"
-                  >
-                    <option value="">Select an option…</option>
-                    {activities.map((a) => (
-                      <option key={a} value={a}>
-                        {a}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Date */}
-                <div className="flex flex-col gap-1">
-                  <label
-                    htmlFor="date"
-                    className="text-sm font-semibold text-[#1A1A1A]"
-                  >
-                    Preferred Date <span className="text-[#CC0000]">*</span>
-                  </label>
-                  <input
-                    id="date"
-                    name="date"
-                    type="date"
-                    required
-                    value={form.date}
-                    onChange={handleChange}
-                    className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
-                  />
-                </div>
-              </div>
-
-              {/* Message */}
-              <div className="flex flex-col gap-1">
-                <label
-                  htmlFor="message"
-                  className="text-sm font-semibold text-[#1A1A1A]"
+            ) : (
+                <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-5"
+                    noValidate
                 >
-                  Message / Additional Notes
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Any additional information, preferred times, or questions…"
-                  className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent resize-none"
-                />
-              </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* Name */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="name"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Full Name <span className="text-[#CC0000]">*</span>
+                      </label>
+                      <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          value={form.name}
+                          onChange={handleChange}
+                          placeholder="Jane Smith"
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
+                      />
+                    </div>
 
-              <button
-                type="submit"
-                className="whitespace-nowrap self-start bg-[#CC0000] hover:bg-red-800 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors"
-              >
-                Send Booking Request
-              </button>
-            </form>
-          )}
-        </div>
-      </section>
-    </>
+                    {/* Email */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="email"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Email Address <span className="text-[#CC0000]">*</span>
+                      </label>
+                      <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          value={form.email}
+                          onChange={handleChange}
+                          placeholder="jane@example.com"
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* Activity */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="activity"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Activity / Facility <span className="text-[#CC0000]">*</span>
+                      </label>
+                      <select
+                          id="activity"
+                          name="activity"
+                          required
+                          value={form.activity}
+                          onChange={handleChange}
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent bg-white"
+                      >
+                        <option value="">Select an option…</option>
+                        {activities.map((a) => (
+                            <option key={a} value={a}>
+                              {a}
+                            </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Duration */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="duration"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Session Length
+                      </label>
+                      <select
+                          id="duration"
+                          name="duration"
+                          value={form.duration}
+                          onChange={handleChange}
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent bg-white"
+                      >
+                        <option value="">Select an option…</option>
+                        {durations.map((d) => (
+                            <option key={d} value={d}>
+                              {d}
+                            </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    {/* Date */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="date"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Preferred Date <span className="text-[#CC0000]">*</span>
+                      </label>
+                      <input
+                          id="date"
+                          name="date"
+                          type="date"
+                          required
+                          value={form.date}
+                          onChange={handleChange}
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
+                      />
+                    </div>
+
+                    {/* Time */}
+                    <div className="flex flex-col gap-1">
+                      <label
+                          htmlFor="time"
+                          className="text-sm font-semibold text-[#1A1A1A]"
+                      >
+                        Preferred Time <span className="text-[#CC0000]">*</span>
+                      </label>
+                      <input
+                          id="time"
+                          name="time"
+                          type="time"
+                          required
+                          value={form.time}
+                          onChange={handleChange}
+                          className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Message */}
+                  <div className="flex flex-col gap-1">
+                    <label
+                        htmlFor="message"
+                        className="text-sm font-semibold text-[#1A1A1A]"
+                    >
+                      Message / Additional Notes
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={form.message}
+                        onChange={handleChange}
+                        placeholder="Any additional information, alternative times, or questions…"
+                        className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent resize-none"
+                    />
+                  </div>
+
+                  {error && (
+                      <p className="text-sm text-[#CC0000] font-medium">{error}</p>
+                  )}
+
+                  <button
+                      type="submit"
+                      disabled={submitting}
+                      className="whitespace-nowrap self-start bg-[#CC0000] hover:bg-red-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors inline-flex items-center gap-2"
+                  >
+                    {submitting && (
+                        <Loader2 className="animate-spin" size={16} aria-hidden="true" />
+                    )}
+                    {submitting ? "Sending…" : "Send Booking Request"}
+                  </button>
+                </form>
+            )}
+          </div>
+        </section>
+      </>
   );
 }
