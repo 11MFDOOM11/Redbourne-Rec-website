@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // The inbox that manages bookings — change this to whichever address
 // should receive enquiries (can also be moved to an env var).
-const BOOKINGS_INBOX = process.env.BOOKINGS_INBOX || "rrcpft@gmail.com";
+const BOOKINGS_INBOX = process.env.BOOKINGS_INBOX || "info@redbournleisure.co.uk";
 
 // Must be an address on a domain you've verified with Resend.
 const FROM_ADDRESS = process.env.RESEND_FROM_ADDRESS || "noreply@redbournleisure.co.uk";
