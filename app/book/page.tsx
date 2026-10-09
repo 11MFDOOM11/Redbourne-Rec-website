@@ -79,7 +79,7 @@ export default function BookPage() {
             <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Booking Enquiry Form</h1>
             <p className="text-base text-[#4A4A4A] max-w-xl leading-relaxed">
               Please complete and submit the form to enquire about our available facilities: Astroturf Pitch,
-              Community Space Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on{"01582 626202"}
+              Community Space Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on{""}
               <a
                 href="tel:01582626202"
                 className="text-[#CC0000] hover:underline"
