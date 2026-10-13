@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // The inbox that manages bookings — change this to whichever address
 // should receive enquiries (can also be moved to an env var).
-const BOOKINGS_INBOX = process.env.BOOKINGS_INBOX || "rrcpft@gmail.com";
+const BOOKINGS_INBOX = process.env.BOOKINGS_INBOX || "info@redbournleisure.co.uk";
 
 // Must be an address on a domain you've verified with Resend.
 const FROM_ADDRESS = process.env.RESEND_FROM_ADDRESS || "noreply@redbournleisure.co.uk";
@@ -13,6 +13,7 @@ const FROM_ADDRESS = process.env.RESEND_FROM_ADDRESS || "noreply@redbournleisure
 interface BookingPayload {
     name: string;
     email: string;
+    club?: string;
     activity: string;
     date: string;
     time: string;
@@ -32,7 +33,7 @@ function escapeHtml(value: string) {
 export async function POST(req: Request) {
     try {
         const data = (await req.json()) as Partial<BookingPayload>;
-        const { name, email, activity, date, time, duration, message } = data;
+        const { name, email, club, activity, date, time, duration, message } = data;
 
         // Basic server-side validation — never trust the client alone.
         if (!name || !email || !activity || !date || !time) {
@@ -53,6 +54,7 @@ export async function POST(req: Request) {
         const safe = {
             name: escapeHtml(name),
             email: escapeHtml(email),
+            club: escapeHtml(club || "Not specified"),
             activity: escapeHtml(activity),
             date: escapeHtml(date),
             time: escapeHtml(time),
@@ -69,6 +71,7 @@ export async function POST(req: Request) {
         <h2>New Booking Enquiry</h2>
         <p><strong>Name:</strong> ${safe.name}</p>
         <p><strong>Email:</strong> ${safe.email}</p>
+        <p><strong>Club / Association:</strong> ${safe.club}</p>
         <p><strong>Activity / Facility:</strong> ${safe.activity}</p>
         <p><strong>Requested Date:</strong> ${safe.date}</p>
         <p><strong>Requested Time:</strong> ${safe.time}</p>

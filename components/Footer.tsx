@@ -47,11 +47,11 @@ export default function Footer() {
                 Contact
               </p>
               <a
-                href="mailto:rrcpft@gmail.com"
+                href="mailto:info@redbournleisure.co.uk"
                 className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 <Mail size={14} aria-hidden="true" />
-                rrcpft@gmail.com
+                info@redbournleisure.co.uk
               </a>
             </div>
 
@@ -78,18 +78,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Subscribe */}
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">
-                Newsletter
-              </p>
-              <Link
-                href="/book"
-                className="whitespace-nowrap inline-block bg-[#CC0000] hover:bg-red-800 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors"
-              >
-                Subscribe
-              </Link>
-            </div>
+            
           </div>
         </div>
 

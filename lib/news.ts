@@ -10,6 +10,23 @@ export interface NewsPost {
 }
 
 export const newsPosts: NewsPost[] = [
+
+  {
+    slug: "astro-now-open",
+    title: "Astroturf Pitch: Construction Complete — Now Open for Bookings!",
+    category: "Astro Update",
+    date: "2026-09-02", // update to the actual completion/opening date
+   author: "RRCPFT Team",
+   excerpt:
+      "Great news — our new 3G astroturf pitch is finished and now open! Here's everything you need to know about booking a session.",
+   body: `
+<p>We're delighted to announce that construction on our new 3G astroturf pitch is now complete — and it's officially open for use!</p>
+<p>After months of ground preparation, surface installation, line marking, and floodlighting, the pitch is ready to welcome the community. Whether you're into 5-a-side football, 7-a-side, or just a kickabout with friends, the new all-weather surface is built to handle it.</p>
+<p>Bookings are now available through our online booking system, so grab a slot and come try it out.</p>
+<p>A huge thank you to everyone who supported this project from planning through to completion — this pitch is for the whole Redbourn community, and we can't wait to see it in action.</p>
+  `,
+  image: "/images/Astro1.JPG", // swap in a real photo of the finished pitch
+  },
   {
     slug: "astro-update",
     title: "Astroturf Pitch: Construction Update",

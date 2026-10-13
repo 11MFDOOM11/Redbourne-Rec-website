@@ -36,7 +36,7 @@ const amenities = [
     icon: <Users className="text-[#CC0000]" size={28} aria-hidden="true" />,
     title: "Community Spaces",
     description:
-      "Flexible spaces indoors and outdoorsavailable suitable for usage and hire. Ideal for meetings, classes, events, corporateteam building away days and community group activities.",
+      "Flexible spaces indoors and outdoors available suitable for usage and hire. Ideal for meetings, classes, events, corporate team building away days and community group activities.",
   },
 ];
 
@@ -190,10 +190,10 @@ export default function HomePage() {
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A] mb-0.5">Email</p>
                   <a
-                    href="mailto:rrcpft@gmail.com"
+                    href="mailto:info@redbournleisure.co.uk"
                     className="text-sm text-[#4A4A4A] hover:text-[#CC0000] transition-colors"
                   >
-                    rrcpft@gmail.com
+                    info@redbournleisure.co.uk
                   </a>
                 </div>
               </div>

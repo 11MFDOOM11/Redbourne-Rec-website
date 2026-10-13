@@ -26,6 +26,7 @@ export default function BookPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    club: "",
     activity: "",
     date: "",
     time: "",
@@ -78,7 +79,7 @@ export default function BookPage() {
             <h1 className="text-3xl font-bold text-[#1A1A1A] mb-3">Booking Enquiry Form</h1>
             <p className="text-base text-[#4A4A4A] max-w-xl leading-relaxed">
               Please complete and submit the form to enquire about our available facilities: Astroturf Pitch,
-              Community Space Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on 01582 626202.{" "}
+              Community Space Hire & Holiday Club and we will respond. If you have an urgent enquiry, please call us on {""}
               <a
                 href="tel:01582626202"
                 className="text-[#CC0000] hover:underline"
@@ -113,6 +114,7 @@ export default function BookPage() {
                         setForm({
                           name: "",
                           email: "",
+                          club: "",
                           activity: "",
                           date: "",
                           time: "",
@@ -171,6 +173,28 @@ export default function BookPage() {
                           className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
                       />
                     </div>
+                  </div>
+
+                  {/* Club / Association */}
+                  <div className="flex flex-col gap-1">
+                    <label
+                        htmlFor="club"
+                        className="text-sm font-semibold text-[#1A1A1A]"
+                    >
+                      Club / Association <span className="text-[#4A4A4A] font-normal">(if applicable)</span>
+                    </label>
+                    <input
+                        id="club"
+                        name="club"
+                        type="text"
+                        value={form.club}
+                        onChange={handleChange}
+                        placeholder="e.g. Redbourn FC Juniors"
+                        className="border border-gray-300 rounded-md px-3 py-2 text-sm text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#CC0000] focus:border-transparent"
+                    />
+                    <p className="text-xs text-[#4A4A4A] mt-0.5">
+                      Booking on behalf of a club, team or association? Let us know its name here.
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
