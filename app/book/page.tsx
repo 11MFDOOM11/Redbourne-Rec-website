@@ -60,7 +60,7 @@ export default function BookPage() {
       setSubmitted(true);
     } catch (err) {
       setError(
-          "Sorry, something went wrong sending your enquiry. Please try again, or call us on 01582 626202."
+          "Sorry, something went wrong sending your enquiry. Please complete all compulsory fields before submitting"
       );
     } finally {
       setSubmitting(false);
